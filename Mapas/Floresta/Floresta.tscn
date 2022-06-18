@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Mapas/Floresta/Modelos_Mapa/Terreno.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Mapas/pause_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Modelos/Player/Player.tscn" type="PackedScene" id=7]
+
+[node name="Floresta" type="Spatial"]
+
+[node name="Floresta_Mapa" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.7626, -1.14622, -35.5171 )
+
+[node name="Player" parent="Floresta_Mapa" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5503, 2.88594, 87.86 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="GUI" instance=ExtResource( 2 )]
+visible = false

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Shaders/psx/shaders-psx1/psx.shader" type="Shader" id=1]
+[ext_resource path="res://Mapas/Void/Modelo/Cubo.glb" type="PackedScene" id=2]
+[ext_resource path="res://Texturas/Void/Prototipo.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 1 )
+shader_param/tint_color = Color( 1, 1, 1, 1 )
+shader_param/specular_intensity = null
+shader_param/vertex_resolution = 256.0
+shader_param/cull_distance = 9999.0
+shader_param/uv_scale = Vector2( 1, 1 )
+shader_param/uv_offset = Vector2( 0, 0 )
+shader_param/uv_speed = Vector2( 0, -1 )
+shader_param/affine_texture_mapping = true
+shader_param/emissive = false
+shader_param/moving_uv = false
+shader_param/double_sided = false
+shader_param/stippled_transparent = false
+shader_param/albedoTex = ExtResource( 3 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1 )
+
+[node name="Cubo" instance=ExtResource( 2 )]
+
+[node name="Cube" parent="." index="0"]
+cast_shadow = 0
+generate_lightmap = false
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube/StaticBody" index="0"]
+shape = SubResource( 2 )

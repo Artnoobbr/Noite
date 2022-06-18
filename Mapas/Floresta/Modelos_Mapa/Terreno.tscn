@@ -1,0 +1,449 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=1]
+[ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
+[ext_resource path="res://Mapas/Floresta/Terrain/data.hterrain" type="Resource" id=3]
+[ext_resource path="res://Texturas/Floresta/chao1.jpg" type="Texture" id=4]
+[ext_resource path="res://Modelos/Floresta/CasaMadeira/Casa_Madeira.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Floresta/Terreno.gd" type="Script" id=8]
+[ext_resource path="res://Modelos/Floresta/Arvore_Noite.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sons/Floresta/Floresta_Noite.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sons/Floresta/Floresta_Manhã.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Modelos/Coisas/Jukebox.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enviroments/Skys/SkyNight.tres" type="PanoramaSky" id=13]
+[ext_resource path="res://fontes/DTM-Mono.otf" type="DynamicFontData" id=14]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+mode = 0
+textures = [ [ ExtResource( 4 ) ], [ null ] ]
+
+[sub_resource type="Environment" id=8]
+background_mode = 2
+background_sky = ExtResource( 13 )
+ambient_light_color = Color( 0.12549, 0.12549, 0.12549, 1 )
+ambient_light_sky_contribution = 0.0
+fog_enabled = true
+fog_color = Color( 0.647059, 0.623529, 0.623529, 1 )
+fog_sun_color = Color( 0.94902, 0.94902, 0.94902, 1 )
+fog_depth_curve = 0.637281
+fog_height_curve = 18.3791
+
+[sub_resource type="DynamicFont" id=9]
+size = 10
+font_data = ExtResource( 14 )
+
+[node name="Floresta_Mapa" type="Spatial"]
+script = ExtResource( 8 )
+
+[node name="HTerrain" type="Spatial" parent="."]
+script = ExtResource( 2 )
+_terrain_data = ExtResource( 3 )
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource( 1 )
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = false
+shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
+
+[node name="conjunto" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 109.703, -0.116209, 173.345 )
+
+[node name="Arvore_Noite" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11378, 4.76837e-07, -6.677 )
+
+[node name="Arvore_Noite2" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56571, -4.76837e-07, 2.94292 )
+
+[node name="Arvore_Noite17" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89122, -4.76837e-07, 10.8242 )
+
+[node name="Arvore_Noite3" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71882, 1.43051e-06, 11.0984 )
+
+[node name="Arvore_Noite4" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1838, 7.15256e-07, -8.52577 )
+
+[node name="Arvore_Noite15" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.56762, 7.15256e-07, 1.03114 )
+
+[node name="Arvore_Noite5" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3389, 9.53674e-07, -4.68219 )
+
+[node name="Arvore_Noite16" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83727, 9.53674e-07, -9.37268 )
+
+[node name="Arvore_Noite14" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47117, 9.53674e-07, -4.68219 )
+
+[node name="Arvore_Noite6" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9393, 0, 0.422396 )
+
+[node name="Arvore_Noite7" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0295, 0, 4.18974 )
+
+[node name="Arvore_Noite8" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6153, 4.76837e-07, 10.6688 )
+
+[node name="Arvore_Noite9" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4337, 4.76837e-07, 15.8776 )
+
+[node name="Arvore_Noite10" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55989, 0.613874, 24.1618 )
+
+[node name="Arvore_Noite11" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5923, 8.34465e-05, 24.3619 )
+
+[node name="Arvore_Noite12" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19619, 0.482389, 29.2118 )
+
+[node name="Arvore_Noite13" parent="conjunto" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20055, 1.13249e-06, 19.5471 )
+
+[node name="conjunto5" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 60.9632, -0.852766, 172.607 )
+
+[node name="Arvore_Noite" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11378, 4.76837e-07, -6.677 )
+
+[node name="Arvore_Noite2" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8565, -4.76837e-07, 2.94293 )
+
+[node name="Arvore_Noite17" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89122, -4.76837e-07, 10.8242 )
+
+[node name="Arvore_Noite3" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71882, 1.43051e-06, 11.0984 )
+
+[node name="Arvore_Noite4" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1838, 7.15256e-07, -8.52577 )
+
+[node name="Arvore_Noite18" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1838, 7.15256e-07, 28.6576 )
+
+[node name="Arvore_Noite15" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7473, 7.15256e-07, 15.3082 )
+
+[node name="Arvore_Noite5" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9369, 9.53674e-07, -18.601 )
+
+[node name="Arvore_Noite16" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.5928, 9.53674e-07, -19.5351 )
+
+[node name="Arvore_Noite14" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.4841, 9.53674e-07, -4.68221 )
+
+[node name="Arvore_Noite6" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9393, 0, 0.422394 )
+
+[node name="Arvore_Noite7" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0295, 0, 4.18974 )
+
+[node name="Arvore_Noite8" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.4108, 4.76837e-07, 10.6688 )
+
+[node name="Arvore_Noite9" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4337, 4.76837e-07, 15.8776 )
+
+[node name="Arvore_Noite10" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.57206, 0.613874, 24.1618 )
+
+[node name="Arvore_Noite11" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 65.7983, 8.34465e-05, 24.3619 )
+
+[node name="Arvore_Noite12" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -3.76196, 2.76316, 34.9929 )
+
+[node name="Arvore_Noite13" parent="conjunto5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20055, 1.13249e-06, 19.5471 )
+
+[node name="conjunto2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 109.703, -0.116209, 91.7836 )
+
+[node name="Arvore_Noite" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11378, 4.76837e-07, -6.677 )
+
+[node name="Arvore_Noite2" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8565, -4.76837e-07, 2.94293 )
+
+[node name="Arvore_Noite17" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89122, -4.76837e-07, 28.078 )
+
+[node name="Arvore_Noite3" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71882, 1.43051e-06, 11.0984 )
+
+[node name="Arvore_Noite4" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1838, 7.15256e-07, -8.52577 )
+
+[node name="Arvore_Noite19" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03966, 7.15256e-07, 14.761 )
+
+[node name="Arvore_Noite18" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1838, 7.15256e-07, 28.6576 )
+
+[node name="Arvore_Noite20" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6983, 7.15256e-07, 41.6613 )
+
+[node name="Arvore_Noite15" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.56762, 7.15256e-07, -16.3716 )
+
+[node name="Arvore_Noite5" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3389, 9.53674e-07, -4.68219 )
+
+[node name="Arvore_Noite16" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83727, 9.53674e-07, -9.37268 )
+
+[node name="Arvore_Noite14" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47117, 9.53674e-07, -4.68219 )
+
+[node name="Arvore_Noite6" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9393, 0, 0.422396 )
+
+[node name="Arvore_Noite7" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0295, 0, 4.18974 )
+
+[node name="Arvore_Noite8" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6153, 4.76837e-07, 10.6688 )
+
+[node name="Arvore_Noite9" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4337, 4.76837e-07, 15.8776 )
+
+[node name="Arvore_Noite10" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55989, 0.613874, 24.1618 )
+
+[node name="Arvore_Noite11" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5923, 8.34465e-05, 24.3619 )
+
+[node name="Arvore_Noite12" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19619, 0.482389, 29.2118 )
+
+[node name="Arvore_Noite13" parent="conjunto2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20055, 1.13249e-06, 19.5471 )
+
+[node name="conjunto6" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 125.881, -0.116209, 91.7836 )
+
+[node name="Arvore_Noite" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8573, 4.84288e-07, -6.67701 )
+
+[node name="Arvore_Noite2" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.4407, -4.76837e-07, 2.94293 )
+
+[node name="Arvore_Noite17" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.0603, -4.76837e-07, 28.078 )
+
+[node name="Arvore_Noite3" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6233, 1.43796e-06, 11.0984 )
+
+[node name="Arvore_Noite4" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.181, 7.15256e-07, 18.8692 )
+
+[node name="Arvore_Noite19" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.59707, 7.15256e-07, 6.8804 )
+
+[node name="Arvore_Noite18" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206451, 7.15256e-07, 36.9286 )
+
+[node name="Arvore_Noite20" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6086, 7.15256e-07, 31.0533 )
+
+[node name="Arvore_Noite15" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58419, 7.15256e-07, 8.16714 )
+
+[node name="Arvore_Noite5" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3389, 9.53674e-07, -4.68219 )
+
+[node name="Arvore_Noite16" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83727, 9.61125e-07, -18.8734 )
+
+[node name="Arvore_Noite14" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47117, 9.61125e-07, -20.3615 )
+
+[node name="Arvore_Noite6" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3297, 0, 0.422394 )
+
+[node name="Arvore_Noite7" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.434, 0, -0.27594 )
+
+[node name="Arvore_Noite8" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6153, 4.84288e-07, 12.7127 )
+
+[node name="Arvore_Noite9" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4337, 4.76837e-07, 15.8776 )
+
+[node name="Arvore_Noite10" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1631, 0.613874, 39.5104 )
+
+[node name="Arvore_Noite11" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4699, 8.3454e-05, 24.3619 )
+
+[node name="Arvore_Noite12" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0179, 0.482389, 46.2624 )
+
+[node name="Arvore_Noite13" parent="conjunto6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20055, 1.13249e-06, 19.5471 )
+
+[node name="conjunto3" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 170.249, -0.116209, 91.7836 )
+
+[node name="Arvore_Noite" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11378, 4.76837e-07, -16.7304 )
+
+[node name="Arvore_Noite2" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95635, -4.76837e-07, 7.31927 )
+
+[node name="Arvore_Noite17" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -3.86395, -4.76837e-07, 37.2266 )
+
+[node name="Arvore_Noite3" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.18555, -0.284382, 7.22627 )
+
+[node name="Arvore_Noite4" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1838, 7.15256e-07, -19.9158 )
+
+[node name="Arvore_Noite19" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -9.68961, 7.15256e-07, -19.0621 )
+
+[node name="Arvore_Noite18" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76511, 7.15256e-07, 31.8678 )
+
+[node name="Arvore_Noite20" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.023, 7.15256e-07, 18.2171 )
+
+[node name="Arvore_Noite15" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -9.24332, 7.15256e-07, -10.0305 )
+
+[node name="Arvore_Noite5" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3389, 9.53674e-07, -28.481 )
+
+[node name="Arvore_Noite16" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83727, 9.53674e-07, -9.37268 )
+
+[node name="Arvore_Noite14" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47117, 9.53674e-07, -4.68219 )
+
+[node name="Arvore_Noite6" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9393, 0, 0.422396 )
+
+[node name="Arvore_Noite7" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5458, 0, -6.29519 )
+
+[node name="Arvore_Noite8" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6153, 4.76837e-07, 10.6688 )
+
+[node name="Arvore_Noite9" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4337, 4.76837e-07, 15.8776 )
+
+[node name="Arvore_Noite10" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22105, 0.613874, -25.7105 )
+
+[node name="Arvore_Noite11" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5923, 8.34465e-05, 24.3619 )
+
+[node name="Arvore_Noite12" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19619, 0.482389, 29.2118 )
+
+[node name="Arvore_Noite13" parent="conjunto3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20055, 1.13249e-06, 19.5471 )
+
+[node name="conjunto4" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 54.8438, -0.116209, 91.7836 )
+
+[node name="Arvore_Noite" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1763, 4.76837e-07, -16.7304 )
+
+[node name="Arvore_Noite2" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 9.34503, -4.76837e-07, 0.287613 )
+
+[node name="Arvore_Noite17" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -3.86395, -4.76837e-07, 43.4346 )
+
+[node name="Arvore_Noite3" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 4.01901, -0.284382, 11.9547 )
+
+[node name="Arvore_Noite4" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1838, 7.15256e-07, -19.9158 )
+
+[node name="Arvore_Noite19" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -9.68961, 7.15256e-07, -19.0621 )
+
+[node name="Arvore_Noite18" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76511, 7.15256e-07, 44.7185 )
+
+[node name="Arvore_Noite20" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.023, 7.15256e-07, 18.2171 )
+
+[node name="Arvore_Noite15" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -9.24332, 7.15256e-07, -10.0305 )
+
+[node name="Arvore_Noite5" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3389, 9.53674e-07, -28.481 )
+
+[node name="Arvore_Noite16" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83727, 9.53674e-07, -9.37268 )
+
+[node name="Arvore_Noite14" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47117, 9.53674e-07, 31.9791 )
+
+[node name="Arvore_Noite6" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9393, 0, 0.422396 )
+
+[node name="Arvore_Noite7" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5458, 0, 31.7657 )
+
+[node name="Arvore_Noite8" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2144, 4.76837e-07, -8.78749 )
+
+[node name="Arvore_Noite9" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4337, 4.76837e-07, 40.0349 )
+
+[node name="Arvore_Noite10" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22105, 0.613874, -25.7105 )
+
+[node name="Arvore_Noite11" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.3288, 8.34465e-05, -22.0143 )
+
+[node name="Arvore_Noite12" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 11.0159, 0.482389, 58.1824 )
+
+[node name="Arvore_Noite13" parent="conjunto4" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20055, 1.13249e-06, 19.5471 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 8 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
+margin_bottom = 240.0
+
+[node name="Demo" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+visible = false
+margin_right = 192.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 1, 1, 1, 0.196078 )
+custom_fonts/font = SubResource( 9 )
+text = "Final da Demo
+se quiser pode dar uma explorada"
+
+[node name="Dia" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="Noite" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Jukebox" parent="." instance=ExtResource( 12 )]
+transform = Transform( 2.09111, 0, 1.20731, 0, 2.41461, 0, -1.20731, 0, 2.09111, 134.059, 0.227751, 214.921 )
+
+[node name="Casa_Madeira_Noite" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1.96957, 0, 3.41139, 0, 3.93913, 0, -3.41139, 0, -1.96957, 126.982, 4.01595, 211.248 )
