@@ -1,0 +1,300 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Modelos/Floresta/CasaMadeira/Interior/Casa_MadeiraInterior.glb" type="PackedScene" id=1]
+[ext_resource path="res://Teste.tres" type="Material" id=2]
+[ext_resource path="res://Scripts/Floresta/Casa_MadeiraInterior.gd" type="Script" id=3]
+[ext_resource path="res://fontes/DTM-Mono.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Enviroments/EnviromentCasaInteriror.tres" type="Environment" id=5]
+[ext_resource path="res://fontes/DTM-Sans.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.351548, 0.820068, 0.387592 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.03732, 0.74979, 0.641954 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 0.95404, 0.147002, 0.403774 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1.25727, 0.638374, 0.78716 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.167306, 0.086715, 1 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1.42757, 0.02887, 1.77262 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1.36398, 1, 0.0375081 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.0154162, 1, 1.77861 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 13
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 13
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "Aparecer_Texto"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("HBoxContainer/VBoxContainer/Pergunta:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("HBoxContainer/VBoxContainer/Pergunta:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Sumir_Texto"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("HBoxContainer/VBoxContainer/Pergunta:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "fade_in"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "fade_out"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="Casa_MadeiraInterior" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Casa" parent="." index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="cadeira" parent="Casa" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="CostasCadeira" parent="Casa/cadeira" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="Detalhe" parent="Casa/cadeira" index="1"]
+material/0 = ExtResource( 2 )
+
+[node name="DetalheArco" parent="Casa/cadeira" index="2"]
+material/0 = ExtResource( 2 )
+
+[node name="Segurador001" parent="Casa/cadeira" index="3"]
+material/0 = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Casa/cadeira" index="4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Casa/cadeira/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="Cama" parent="Casa" index="1"]
+material/0 = ExtResource( 2 )
+
+[node name="Detalhe1" parent="Casa/Cama" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="detalhe12" parent="Casa/Cama" index="1"]
+material/0 = ExtResource( 2 )
+
+[node name="Detalhe13" parent="Casa/Cama" index="2"]
+material/0 = ExtResource( 2 )
+
+[node name="DetalheArco001" parent="Casa/Cama" index="3"]
+material/0 = ExtResource( 2 )
+
+[node name="seguradores" parent="Casa/Cama" index="4"]
+material/0 = ExtResource( 2 )
+
+[node name="travesseiro" parent="Casa/Cama" index="5"]
+material/0 = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Casa/Cama" index="6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Casa/Cama/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010996, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Cama" type="Area" parent="Casa/Cama" index="7"]
+monitoring = false
+
+[node name="CamaColission" type="CollisionShape" parent="Casa/Cama/Cama" index="0"]
+shape = SubResource( 13 )
+
+[node name="Janela" parent="Casa" index="2"]
+material/0 = ExtResource( 2 )
+
+[node name="Janela2" parent="Casa" index="3"]
+material/0 = ExtResource( 2 )
+
+[node name="Mesa" parent="Casa" index="4"]
+material/0 = ExtResource( 2 )
+
+[node name="Mesa2" parent="Casa/Mesa" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Casa/Mesa" index="1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Casa/Mesa/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.899726, 0.075441, -0.573375 )
+shape = SubResource( 3 )
+
+[node name="Porta" parent="Casa" index="5"]
+material/0 = ExtResource( 2 )
+
+[node name="Prateleira" parent="Casa" index="6"]
+material/0 = ExtResource( 2 )
+
+[node name="Segurador" parent="Casa/Prateleira" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Casa/Prateleira" index="1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Casa/Prateleira/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0591436, 0 )
+shape = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Casa" index="7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Casa/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00065, 0 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Casa/StaticBody" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000215111, 0, 1.795 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Casa/StaticBody" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000215111, 0, -1.77662 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Casa/StaticBody" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3654, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Casa/StaticBody" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34168, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" index="0"]
+margin_right = 144.0
+margin_bottom = 240.0
+alignment = 2
+
+[node name="Aviso" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" index="0"]
+visible = false
+margin_top = 185.0
+margin_right = 176.0
+margin_bottom = 201.0
+custom_colors/font_color = Color( 1, 1, 1, 0.14902 )
+custom_fonts/font = SubResource( 17 )
+text = "\"F\" para não e \"E\" para sim"
+
+[node name="Pergunta" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" index="1"]
+margin_top = 205.0
+margin_right = 144.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 8 )
+text = "Tem certeza que
+quer dormir agora?"
+percent_visible = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" index="1"]
+anims/Aparecer_Texto = SubResource( 9 )
+anims/RESET = SubResource( 10 )
+anims/Sumir_Texto = SubResource( 11 )
+
+[node name="TranformScreen" type="CanvasLayer" parent="." index="2"]
+
+[node name="ColorRect" type="ColorRect" parent="TranformScreen" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+
+[node name="Fade_anim" type="AnimationPlayer" parent="TranformScreen" index="1"]
+anims/RESET = SubResource( 14 )
+anims/fade_in = SubResource( 15 )
+anims/fade_out = SubResource( 16 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="3"]
+environment = ExtResource( 5 )
+
+[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="TranformScreen/Fade_anim" to="." method="_on_Fade_anim_animation_finished"]
