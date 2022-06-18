@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Grass_Runining.ogg-4c9ce4bd7aa4e93b9d7457c48fc5d2cc.oggstr"
+
+[deps]
+
+source_file="res://Sons/Floresta/Grass_Runining.ogg"
+dest_files=[ "res://.import/Grass_Runining.ogg-4c9ce4bd7aa4e93b9d7457c48fc5d2cc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

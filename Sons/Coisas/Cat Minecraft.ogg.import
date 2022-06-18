@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cat Minecraft.ogg-9da3576e60c9e8589cd55862652ad13e.oggstr"
+
+[deps]
+
+source_file="res://Sons/Coisas/Cat Minecraft.ogg"
+dest_files=[ "res://.import/Cat Minecraft.ogg-9da3576e60c9e8589cd55862652ad13e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
